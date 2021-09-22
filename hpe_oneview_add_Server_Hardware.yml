@@ -15,7 +15,7 @@
         state: present
         data:
           hostname : "172.16.15.216"
-          username : "Administrator"
+          username : "admin"
           password : "Pa$$w0rd"
           force : false
           licensingIntent: "OneView"
