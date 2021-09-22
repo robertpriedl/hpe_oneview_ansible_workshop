@@ -17,10 +17,11 @@
           hostname : "{{ilo_ip}}"
           username : "admin"
           password : "{{ilo_pw}}"
-          force : false
+          force : true
           licensingIntent: "OneView"
           configurationState: "Managed"
       delegate_to: localhost
+      ignore_errors: true
 
     - name: Gather facts about all Server Hardwares
       hpe.oneview.oneview_server_hardware_facts:
