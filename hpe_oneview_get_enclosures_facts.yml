@@ -3,7 +3,6 @@
   gather_facts: true
 
   tasks:
-     
     - name: Gather facts about all Enclosures
       hpe.oneview.oneview_enclosure_facts:
         hostname: "{{ oneview_hostname }}"
