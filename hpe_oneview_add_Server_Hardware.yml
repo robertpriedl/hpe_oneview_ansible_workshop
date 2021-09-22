@@ -22,14 +22,12 @@
           configurationState: "Managed"
       delegate_to: localhost
       ignore_errors: true
+      register: new_server
 
-    - name: Gather facts about all Server Hardwares
-      hpe.oneview.oneview_server_hardware_facts:
-        hostname: "{{ oneview_hostname }}"
-        username: "{{ oneview_username }}"
-        password: "{{ oneview_password }}"
-        auth_login_domain: "{{ oneview_domain }}"
-        api_version: "{{ oneview_apiversion }}"
-      delegate_to: localhost
+    - name: display new server facts
+      debug:
+        msg: Name {{new_server.server_hardware.name}} IP {{new_server.server_hardware.mpIpAddresses[0].address}}
+
+   
 
     
