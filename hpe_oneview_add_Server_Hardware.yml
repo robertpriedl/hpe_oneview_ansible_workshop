@@ -1,5 +1,5 @@
 ---
-- hosts: localhost
+- hosts: esx_hosts
   gather_facts: true
   collections:
     - hpe.oneview
@@ -14,9 +14,9 @@
         api_version: "{{ oneview_apiversion }}"
         state: present
         data:
-          hostname : "172.16.15.216"
+          hostname : "{{ilo_ip}}"
           username : "admin"
-          password : "Pa$$w0rd"
+          password : "{{ilo_pw}}"
           force : false
           licensingIntent: "OneView"
           configurationState: "Managed"
