@@ -14,12 +14,8 @@
         api_version: "{{ oneview_apiversion }}"
         state: absent
         data:
-          hostname : "{{ilo_ip}}"
-          username : "{{ilo_user}}"
-          password : "{{ilo_pw}}"
-          force : true
-          licensingIntent: "OneView"
-          configurationState: "Managed"
+          name: "{{ilo_dns}}"
+          
       delegate_to: localhost
       ignore_errors: true
 
