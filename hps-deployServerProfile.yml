@@ -42,13 +42,83 @@
           name: "{{ ov_profile }}"
           serverHardwareName: "{{ ov_hardware }}"
           bios:
-            complianceControl: "Checked"
             manageBios: true
-            overriddenSettings: 
-             - id: "CustomPostMessage"
-               value: "This is the Workshop Custom Post screen message"
-             - id: "ExtendedMemTest"
-               value: "Disabled"
+            reapplyState: NotApplying
+            consistencyState: Consistent
+            overriddenSettings:
+              - id: WorkloadProfile
+                value: Virtualization-MaxPerformance
+              - id: PowerRegulator
+                value: StaticHighPerf
+              - id: MinProcIdlePower
+                value: NoCStates
+              - id: MinProcIdlePkgState
+                value: NoState
+              - id: EnergyPerfBias
+                value: MaxPerf
+              - id: CollabPowerControl
+                value: Disabled
+              - id: NumaGroupSizeOpt
+                value: Clustered
+              - id: UncoreFreqScaling
+                value: Maximum
+              - id: SubNumaClustering
+                value: Enabled
+              - id: EnergyEfficientTurbo
+                value: Disabled
+              - id: IntelUpiPowerManagement
+                value: Disabled
+          boot:
+            order:
+              - CD
+              - USB
+              - HardDisk
+              - PXE
+            manageBoot: true
+          bootMode:
+            mode: BIOS
+            manageMode: true
+            secureBoot: Disabled
+            pxeBootPolicy: null
+          localStorage:
+            controllers:
+              - mode: Mixed
+                deviceSlot: Embedded
+                initialize: false
+                logicalDrives:
+                  - name: OsVol666
+                    bootable: true
+                    raidLevel: RAID1
+                    accelerator: Unmanaged
+                    driveNumber: 1
+                    numSpareDrives: null
+                    driveTechnology: SasHdd
+                    sasLogicalJBODId: null
+                    numPhysicalDrives: 2
+                driveWriteCache: Unmanaged
+                importConfiguration: false
+                predictiveSpareRebuild: Unmanaged
+            reapplyState: NotApplying
+            sasLogicalJBODs: []
+          managementProcessor:
+            manageMp: true
+            mpSettings:
+              - args:
+                  localAccounts:
+                    - password: {{ilo_pw}}
+                      userName: admin
+                      loginPriv: true
+                      displayName: admin
+                      iLOConfigPriv: true
+                      userConfigPriv: true
+                      virtualMediaPriv: true
+                      hostNICConfigPriv: true
+                      remoteConsolePriv: true
+                      hostBIOSConfigPriv: true
+                      hostStorageConfigPriv: true
+                      virtualPowerAndResetPriv: true
+                settingType: LocalAccounts
+            reapplyState: NotApplying
         params:
           force: True
       delegate_to: localhost
