@@ -73,7 +73,7 @@
               - USB
               - HardDisk
               - PXE
-            manageBoot: true
+            manageBoot: false
           bootMode:
             mode: UEFIOptimized
             manageMode: true
