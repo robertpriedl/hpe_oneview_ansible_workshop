@@ -10,10 +10,10 @@
         msg: "You need to define ov_hardware for each host which should be deployed via this script"
       when: ov_hardware is undefined 
 
-    - name: Set Oneview Server Profile Name for the host in question
-      set_fact:
-        ov_profile: "{{kd_name}}_{{ inventory_hostname_short }}"
-      when: ov_profile is undefined or ov_profile is not match ("^Workshop_.*")
+    #- name: Set Oneview Server Profile Name for the host in question
+    #  set_fact:
+    #    ov_profile: "{{kd_name}}_{{ inventory_hostname_short }}"
+    #  when: ov_profile is undefined or ov_profile is not match ("^Workshop_.*")
 
     - name: Power Off compute in order to remove the profile
       hpe.oneview.oneview_server_hardware:
@@ -103,8 +103,7 @@
             reapplyState: NotApplying
             manageFirmware: true
             consistencyState: Unknown
-            firmwareBaselineUri: >-
-              "{{hp_spp}}"
+            firmwareBaselineUri: "{{hp_spp}}"
             firmwareInstallType: FirmwareAndOSDrivers
             forceInstallFirmware: false
             firmwareActivationType: Immediate
