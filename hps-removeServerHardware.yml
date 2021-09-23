@@ -14,8 +14,8 @@
         api_version: "{{ oneview_apiversion }}"
         state: absent
         data:
-            name: ov_profile
-            
+          name: ov_profile
+
   delegate_to: localhost
     - name: Remove a Server Hardware
       hpe.oneview.oneview_server_hardware:
