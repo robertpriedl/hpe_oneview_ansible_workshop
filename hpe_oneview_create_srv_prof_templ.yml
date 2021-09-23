@@ -18,7 +18,7 @@
           enclosureGroupName: "{{ enclosure_group_name }}"
           #initialScopeNames:
           #  - Renamed
-          #  - test
+          #  - test 
           managementProcessor: 
             complianceControl: "Checked"
             manageMp: true
