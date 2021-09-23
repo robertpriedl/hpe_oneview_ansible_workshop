@@ -1,4 +1,7 @@
 ---
+# ILO Vars
+ilo_user: Administrator ## Ilo password is defined by host
+
 # Oneview configuration
 ov_template: Workshop
 # VMware Install related vars
