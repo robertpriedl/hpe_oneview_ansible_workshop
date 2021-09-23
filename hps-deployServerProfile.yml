@@ -103,7 +103,7 @@
             mpSettings:
               - args:
                   localAccounts:
-                    - password: {{ilo_pw}}
+                    - password: "{{ilo_pw}}"
                       userName: admin
                       loginPriv: true
                       displayName: admin
