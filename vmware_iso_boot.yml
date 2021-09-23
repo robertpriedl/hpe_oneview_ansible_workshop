@@ -16,7 +16,7 @@
     hpilo_boot:
       host: "{{ ilo_ip }}" 
       login: "{{ ilo_user }}"
-      password: "{{ ilo_password }}"
+      password: "{{ ilo_pw }}"
       media: cdrom
       image: "{{ esxi_installiso }}" 
     delegate_to: localhost
