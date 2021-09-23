@@ -27,9 +27,7 @@
         state: absent
         data:
           name: "{{ilo_dns}}"
-          
       delegate_to: localhost
-      ignore_errors: true
 
  
    
