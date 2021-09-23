@@ -2,6 +2,9 @@
 # ILO Vars
 ilo_user: Administrator ## Ilo password is defined by host
 
+# Firmware
+hp_spp: /rest/firmware-drivers/P35939_001_gen10spp-2021_04_0-SPP2021040_2021_0409_17
+
 # Oneview configuration
 ov_template: Workshop
 # VMware Install related vars
