@@ -13,7 +13,7 @@
      var: hostvars.bastion_host.ansible_host
 
   - name: Task to boot a system using an ISO from an HP iLO interface
-    hpilo_boot:
+    community.general.hpilo_boot:
       host: "{{ ilo_ip }}" 
       login: "{{ ilo_user }}"
       password: "{{ ilo_pw }}"
