@@ -15,7 +15,7 @@
         state: present
         data:
           hostname : "{{ilo_ip}}"
-          username : "admin"
+          username : "{{ilo_user}}"
           password : "{{ilo_pw}}"
           force : true
           licensingIntent: "OneView"
