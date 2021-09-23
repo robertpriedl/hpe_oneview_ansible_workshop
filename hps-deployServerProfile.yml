@@ -104,7 +104,7 @@
             manageFirmware: true
             consistencyState: Unknown
             firmwareBaselineUri: >-
-              /rest/firmware-drivers/P35939_001_gen10spp-2021_04_0-SPP2021040_2021_0409_17
+              "{{hp_spp}}"
             firmwareInstallType: FirmwareAndOSDrivers
             forceInstallFirmware: false
             firmwareActivationType: Immediate
