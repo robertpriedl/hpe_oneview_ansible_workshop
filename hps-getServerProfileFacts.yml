@@ -4,7 +4,7 @@
 
   tasks:
     - name: Gather facts about all Server Profiles
-      oneview_server_profile_facts:
+      hpe.oneview.oneview_server_profile_facts:
         hostname: "{{ hostvars.oneview_host.ansible_host }}"
         username: "{{ oneview_username }}"
         password: "{{ oneview_password }}"
