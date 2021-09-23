@@ -75,18 +75,18 @@
               - PXE
             manageBoot: true
           bootMode:
-            mode: BIOS
+            mode: UEFIOptimized
             manageMode: true
             secureBoot: Disabled
-            pxeBootPolicy: null
+            pxeBootPolicy: Auto
           localStorage:
             controllers:
               - mode: Mixed
                 deviceSlot: Embedded
                 initialize: true
                 logicalDrives:
-                  - name: OsVol666
-                    bootable: true
+                  - name: OsVol667
+                    bootable: false
                     raidLevel: RAID1
                     accelerator: Unmanaged
                     driveNumber: 1
