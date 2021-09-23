@@ -98,6 +98,16 @@
                 predictiveSpareRebuild: Unmanaged
             reapplyState: NotApplying
             sasLogicalJBODs: []
+          firmware:
+            reapplyState: NotApplying
+            manageFirmware: true
+            consistencyState: Unknown
+            firmwareBaselineUri: >-
+              /rest/firmware-drivers/P35939_001_gen10spp-2021_04_0-SPP2021040_2021_0409_17
+            firmwareInstallType: FirmwareAndOSDrivers
+            forceInstallFirmware: false
+            firmwareActivationType: Immediate
+            firmwareScheduleDateTime: ''
           managementProcessor:
             manageMp: true
             mpSettings:
