@@ -1,4 +1,7 @@
 ---
+# Customer vars
+kd_name: "BechtlePower"
+
 # ILO Vars
 ilo_user: Administrator ## Ilo password is defined by host
 
@@ -7,6 +10,8 @@ hp_spp: /rest/firmware-drivers/P35939_001_gen10spp-2021_04_0-SPP2021040_2021_040
 
 # Oneview configuration
 ov_template: Workshop
+ov_profile: "{{kd_name}}_{{ inventory_hostname_short }}"
+
 # VMware Install related vars
 cust_iso_file: custom_esxi.iso
 bastion_get_url: "http://{{ hostvars.bastion_host.ansible_host }}/iso"

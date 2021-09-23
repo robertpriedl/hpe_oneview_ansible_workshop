@@ -5,7 +5,19 @@
     - hpe.oneview
   
   tasks:
-    - name: Add a Server Hardware
+    - name: Remove a Server Profile
+      hpe.oneview.oneview_server_profile:
+        hostname: "{{ oneview_hostname }}"
+        username: "{{ oneview_username }}"
+        password: "{{ oneview_password }}"
+        auth_login_domain: "{{ oneview_domain }}"
+        api_version: "{{ oneview_apiversion }}"
+        state: absent
+        data:
+            name: ov_profile
+            
+  delegate_to: localhost
+    - name: Remove a Server Hardware
       hpe.oneview.oneview_server_hardware:
         hostname: "{{ oneview_hostname }}"
         username: "{{ oneview_username }}"
