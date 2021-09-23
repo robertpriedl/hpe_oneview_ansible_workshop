@@ -132,18 +132,6 @@
           force: True
       delegate_to: localhost
 
-    - name: Ensure profile state is compliant
-      hpe.oneview.oneview_server_profile:
-        hostname: "{{ hostvars.oneview_host.ansible_host }}"
-        username: "{{ oneview_username }}"
-        password: "{{ oneview_password }}"
-        auth_login_domain: "{{ oneview_domain }}"
-        api_version: "{{ oneview_apiversion }}"
-        state: "compliant"
-        data:
-          name: "{{ ov_profile }}"
-      delegate_to: localhost
-
     - name: Gather sso iLO url facts about a Server Hardware
       hpe.oneview.oneview_server_hardware_facts:
         hostname: "{{ hostvars.oneview_host.ansible_host }}"
