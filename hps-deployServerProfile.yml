@@ -38,7 +38,7 @@
         auth_login_domain: "{{ oneview_domain }}"
         api_version: "{{ oneview_apiversion }}"
         data:
-          name: "{{ ov_profile }}"
+          name: "supadupa"
           serverHardwareName: "{{ ov_hardware }}"
           bios:
             manageBios: true

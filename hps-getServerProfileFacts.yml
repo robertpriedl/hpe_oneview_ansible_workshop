@@ -1,4 +1,9 @@
 ---
+######
+# Get ServerProfile Facts of Assigned ServerProfiles
+# Required for getting the ServerProfile in YML Format for configuring and deploying new profile
+######
+
 - hosts: esx_hosts
   gather_facts: no
 
