@@ -18,9 +18,9 @@
        state: absent
      become: true
      loop:
-        - "{{ wrk_dir }}"
-        - "{{ mnt_dir }}"
-      delegate_to: bastion_host
+       - "{{ wrk_dir }}"
+       - "{{ mnt_dir }}"
+     delegate_to: bastion_host
      # needs to run as root as file ownership will not allow deletion otherwise 
 
    - name: Remove customized iso image
