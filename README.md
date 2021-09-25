@@ -23,3 +23,6 @@ A last Playbook will remove the Serverprofile and the Server Hardware from OneVi
 |**hps-deployServerProfile.yml**| Deploy a custom Serverprofile to the Server Hardware. It is a yaml code in the playbook, it should be handled separate with own var files in the future |
 |**hps-getServerProfileFacts.yml**| Get the Serverprofile Facts from OneView. Its quite easier to configure the Server Profile in yaml, when you have a working Profile for copy-pasting. You'll find the Profile Facts under the ESXi host Facts|
 |**hps-removeServerHardware.yml**| Remove the Serverprofile from the Serverhardware under OneView and Delete the Serverhardware from OneView. So the Server will be prepared for delivery. |
+|**vmware_iso_boot**| Boot the created ISO and install ESXi unattended. A Task will wait for the Server, when the ESXi IP is answering on port 80|
+|**vmware_iso_cleanup.yml**| Clean up the working dir with the temporary mounted iso files. Also it cleanup the ISO files on the bastion_host webserver directory |
+|**vmware_iso_prep**| Create a unattended ESXi install ISO file with templating a ks.cfg file and configuring the ISO. After all it will be copied to the bastion_server to the iso directory for further use. |
