@@ -48,7 +48,7 @@ esxi_rootpw: "Pa$$w0rd"
 #### second step approach
 esxi_bootproto: static
 # only if static:   # not finished yet
-esxi_ip: 172.16.15.217
+esxi_ip: 172.16.15.215
 esxi_mask: 255.255.255.0
 esxi_gw: 172.16.15.250
 esxi_fqdn: "{{ inventory_hostname_short }}.deploy.local"
