@@ -46,14 +46,14 @@ esxi_rootpw: "Pa$$w0rd"
 #### but the esxi parameters must be tight to the specific host in the inventory
 #### we would also need different naming for the (different) iso-images
 #### second step approach
-esxi_bootproto: dhcp
+esxi_bootproto: static
 # only if static:   # not finished yet
-esxi_ip: 1.2.3.4  
+esxi_ip: 172.16.15.217
 esxi_mask: 255.255.255.0
-esxi_gw: 1.2.3.1
+esxi_gw: 172.16.15.250
 esxi_fqdn: "{{ inventory_hostname_short }}.deploy.local"
-esxi_nameserver: 1.2.3.1
-esxi_domain: example.com
+esxi_nameserver: 172.16.15.1
+esxi_domain: deploy.local
 
 # fixed WMware installation related vars:
 ks_template: ks.cfg
