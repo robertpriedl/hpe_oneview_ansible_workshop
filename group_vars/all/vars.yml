@@ -1,5 +1,6 @@
 ---
 # Oneview configuration
+oneview_hostname: 172.16.15.219
 ov_profile: "{{kd_name}}_{{ inventory_hostname_short }}"
 server_hardware_type_name: "DL 380 Gen10 1"
 

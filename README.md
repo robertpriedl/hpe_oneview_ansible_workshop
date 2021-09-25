@@ -12,8 +12,14 @@ A last Playbook will remove the Serverprofile and the Server Hardware from OneVi
 | Topic   | Exercises  | 
 |---|---|
 | **BastionHost** : The installed Bastionhost with webserver and ESXi Iso under /tmp. Beware of the iso directory - my iso dir has the name "iso" not "isos"!|  |
-| **Inventory** : The Host file with the supporting server and the target servers. The name and the Ilo Vars are required for installing. The IP of the target Server is required for static IP. The ilo_pw is the password of the "Administrator" of the ILO interface and is documented on a lable on the Server itself| |
-| **group_vars** : Here are all required vars for the server deployment. For production it should be one group_var per customer and a "all" group for generic settings. Also the host specific vars should be in the host_vars or in the inventory file |  |
+| **Inventory** : The Host file with the supporting server and the target servers. The name and the Ilo Vars are required for installing. The IP of the target Server is required for static IP. The ilo_pw is the password of the "Administrator" of the ILO interface and is documented on a lable on the Server itself. The host specific vars should be here in the inventory file, or under the host_vars| |
+| **group_vars** : Here are all required vars for the server deployment. For production it should be one group_var per customer and a "all" group for generic settings.  |  |
 | **-** : -| -- |
 
+## Playbooks:
 
+| Playbook   | Description |
+|**hps-addServerHardware.yml**| Add the Server hardware to Oneview. You need the OneView Credentials, the ILO Credentials are in the hosts_var or in the inventory file. Use vault vars for production.|
+|**hps-deployServerProfile.yml**| Deploy a custom Serverprofile to the Server Hardware. It is a yaml code in the playbook, it should be handled separate with own var files in the future |
+|**hps-getServerProfileFacts.yml**| Get the Serverprofile Facts from OneView. Its quite easier to configure the Server Profile in yaml, when you have a working Profile for copy-pasting. You'll find the Profile Facts under the ESXi host Facts|
+|**hps-removeServerHardware.yml**| Remove the Serverprofile from the Serverhardware under OneView and Delete the Serverhardware from OneView. So the Server will be prepared for delivery. |

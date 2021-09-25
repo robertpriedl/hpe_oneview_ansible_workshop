@@ -113,10 +113,10 @@
             mpSettings:
               - args:
                   localAccounts:
-                    - password: "{{ilo_pw}}"
-                      userName: admin
+                    - password: "{{new_ilo_pw}}"
+                      userName: "{{new_ilo_user}}"
                       loginPriv: true
-                      displayName: admin
+                      displayName: "{{new_ilo_user}}"
                       iLOConfigPriv: true
                       userConfigPriv: true
                       virtualMediaPriv: true

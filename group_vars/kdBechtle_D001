@@ -5,6 +5,11 @@ org_iso:  "/tmp/VMware-ESXi-7.0.2.iso"
 # select hp support pack - Configure it under OneView. Get the path with the playbook "hps-getServerProfileFacts"
 hp_spp: /rest/firmware-drivers/P35939_001_gen10spp-2021_04_0-SPP2021040_2021_0409_17
 
+# ILO settings
+# create new user for ILO with admin rights
+new_ilo_user: admin1
+new_ilo_pw: Pa$$w0rd
+
 # ESXi NW Config for static
 esxi_fqdn: "{{ inventory_hostname_short }}.deploy.local"
 esxi_nameserver: 172.16.15.1
