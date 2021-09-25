@@ -53,6 +53,7 @@ esxi_mask: 255.255.255.0
 esxi_gw: 172.16.15.250
 esxi_fqdn: "{{ inventory_hostname_short }}.deploy.local"
 esxi_nameserver: 172.16.15.1
+esxi_nameserver: 172.16.15.80
 esxi_domain: deploy.local
 
 # fixed WMware installation related vars:
