@@ -1,5 +1,5 @@
 ---
-- hosts: bastion_host
+- hosts: esx_hosts
   gather_facts: no
   ##  become: true
 
@@ -10,6 +10,7 @@
        path: "{{ mnt_dir }}"
        state: unmounted
      become: true
+     delegate_to: bastion_host
 
    - name: Remove workingdir with Iso content
      file:
@@ -19,14 +20,14 @@
      loop:
         - "{{ wrk_dir }}"
         - "{{ mnt_dir }}"
+      delegate_to: bastion_host
      # needs to run as root as file ownership will not allow deletion otherwise 
 
-
-#   i leave the  customized iso image where it is
-#   - name: Remove customized iso image
-#     file:
-#       path: "{{ cust_iso }}"
-#       state: absent
-#     become: true
-#     # needs to run as root as file ownership will not allow deletion otherwise 
+   - name: Remove customized iso image
+     file:
+       path: "{{ cust_iso }}"
+       state: absent
+     become: true
+     delegate_to: bastion_host
+     # needs to run as root as file ownership will not allow deletion otherwise 
 
