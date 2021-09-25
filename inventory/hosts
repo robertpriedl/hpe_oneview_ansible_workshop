@@ -4,7 +4,7 @@ oneview_host ansible_host=172.16.15.219
 
 
 [kdBechtle_D001]
-esx1 ansible_host="172.16.15.215" ilo_dns="ILOCZ3913QWVK.network.local" ilo_ip=172.16.15.216 ilo_pw="QGZ5CDQB" esxi_rootpw="Pa$$w0rd" ilo_user=Administrator esxi_bootproto=static esxi_ip=172.16.15.215 esxi_mask=255.255.255.0 esxi_gw=172.16.15.250
+esx2 ansible_host="172.16.15.215" ilo_dns="ILOCZ3913QWVK.network.local" ilo_ip=172.16.15.216 ilo_pw="QGZ5CDQB" esxi_rootpw="Pa$$w0rd" ilo_user=Administrator esxi_bootproto=static esxi_ip=172.16.15.215 esxi_mask=255.255.255.0 esxi_gw=172.16.15.250
 
 
 [esx_hosts:children]

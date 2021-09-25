@@ -7,7 +7,7 @@ hp_spp: /rest/firmware-drivers/P35939_001_gen10spp-2021_04_0-SPP2021040_2021_040
 
 # ILO settings
 # create new user for ILO with admin rights
-new_ilo_user: admin1
+new_ilo_user: admin2
 new_ilo_pw: Pa$$w0rd
 
 # ESXi NW Config for static
