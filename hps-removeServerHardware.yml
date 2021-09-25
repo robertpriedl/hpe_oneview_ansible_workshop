@@ -5,6 +5,21 @@
     - hpe.oneview
   
   tasks:
+    - name: Power of Server gentley
+      hpe.oneview.oneview_server_hardware:
+        hostname: "{{ oneview_hostname }}"
+        username: "{{ oneview_username }}"
+        password: "{{ oneview_password }}"
+        auth_login_domain: "{{ oneview_domain }}"
+        api_version: "{{ oneview_apiversion }}"
+        state: power_state_set
+        data:
+          name : "172.18.6.15"
+          powerStateData:
+            powerState: "Off"
+            powerControl: "MomentaryPress"
+      delegate_to: localhost
+      
     - name: Remove a Server Profile
       hpe.oneview.oneview_server_profile:
         hostname: "{{ oneview_hostname }}"
