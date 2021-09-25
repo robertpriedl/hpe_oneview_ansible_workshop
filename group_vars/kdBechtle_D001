@@ -1,0 +1,12 @@
+---
+kd_name: "BechtlePower"
+# select esxi iso. copy it to /tmp on the bastion host
+org_iso:  "/tmp/VMware-ESXi-7.0.2.iso"
+# select hp support pack - Configure it under OneView. Get the path with the playbook "hps-getServerProfileFacts"
+hp_spp: /rest/firmware-drivers/P35939_001_gen10spp-2021_04_0-SPP2021040_2021_0409_17
+
+# ESXi NW Config for static
+esxi_fqdn: "{{ inventory_hostname_short }}.deploy.local"
+esxi_nameserver: 172.16.15.1
+esxi_nameserver2: 172.16.15.80
+esxi_domain: deploy.local

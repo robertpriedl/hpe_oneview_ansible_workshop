@@ -1,25 +1,19 @@
 
-# Welcome to Red Hat / HPE Workshop
+# Welcome to Red Hat / HPE Server Provisioning
 
 ## Introduction
 
-This Workshop will help understand how to use Ansible to automation HPE tools like HPE OneView and HPE iLO. If you’re new to Ansible Automation, we suggest that you attend one of the Ansible Automation workshops to get started with the concepts. If you are planning to use Ansible Automation in production, we highly recommend attending the Red Hat official training to master the concepts as well as the product.
+This Playbooks will add the Server to OneView, a genreated Profile with OneView.
+Then a Playbook will prepare an ISO File with the given vars for an unattended ESXi Installation.
+A last Playbook will remove the Serverprofile and the Server Hardware from OneView, to make it prepared for delivery.
 
-After finishing this workshop you will be ready to start using Ansible for your daily requirements
-
-
-
-## Our workshop:
+## Prereqs:
 
 | Topic   | Exercises  | 
 |---|---|
-| **Prerequisites** : This document will explain the prerequisites for this workshop| [Prerequisites](./exercises/prerequisites.md) |
-| **Exercice 0** : This guide explains how to install Red Hat Ansible Tower (Controller)| [Ansible Tower Deployment](./exercises/ansible_tower_install.md) |
-| **Exercice 1** : This prerequisite guides you to setup git and vscode on your windows laptop| [Code Editor and Git on Windows](./exercises/code_editor_and_git_on_windows.md) |
-| **Exercice 2** : This prerequisites guides you to create a fork of the provided workshop repository| [Cloning Workshop Using Git](./exercises/git.md) |
-| **Exercice 3** : This exercise helps to create your first virtual environement in tower| [Setting up Virtual Environment](./exercises/virtual_environment.md) |
-| **Exercice 4** : This exercise introduces how to automate HPE OneView with Ansible Tower (Controller)| [Getting Started with HPE OneView](./exercises/getting_started_with_hpe_oneview.md) |
-| **Exercice 5** : This excerice automates HW manipulation via  HPE OneView with Ansible Tower (Controller)| [Automationg HPE OneView to manipulate Server Configuration](./exercises/oneview_server_config.md) |
-| **Exercice 6** : This excerice automates deployment of ESXi with Ansible Tower (Controller)| [VMware ESXi Automated Deployment](./exercises/vmware_install.md)
-| **Bonus Exercice 7** : Learn how to create a workflow template in Ansible Tower (Controller)| [Create an overall Workflow](./exercises/workflow.md)
+| **BastionHost** : The installed Bastionhost with webserver and ESXi Iso under /tmp. Beware of the iso directory - my iso dir has the name "iso" not "isos"!|  |
+| **Inventory** : The Host file with the supporting server and the target servers. The name and the Ilo Vars are required for installing. The IP of the target Server is required for static IP. The ilo_pw is the password of the "Administrator" of the ILO interface and is documented on a lable on the Server itself| |
+| **group_vars** : Here are all required vars for the server deployment. For production it should be one group_var per customer and a "all" group for generic settings. Also the host specific vars should be in the host_vars or in the inventory file |  |
+| **-** : -| -- |
+
 

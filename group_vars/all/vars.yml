@@ -1,16 +1,7 @@
 ---
-# Customer vars
-kd_name: "BechtlePower"
-
-# ILO Vars
-ilo_user: Administrator ## Ilo password is defined by host
-
-# Firmware
-hp_spp: /rest/firmware-drivers/P35939_001_gen10spp-2021_04_0-SPP2021040_2021_0409_17
-
 # Oneview configuration
-ov_template: Workshop
 ov_profile: "{{kd_name}}_{{ inventory_hostname_short }}"
+server_hardware_type_name: "DL 380 Gen10 1"
 
 # VMware Install related vars
 cust_iso_file: "{{ ov_profile }}_esxi.iso"
@@ -18,43 +9,8 @@ bastion_get_url: "http://{{ hostvars.bastion_host.ansible_host }}/iso"
 bastion_iso_dir: /var/www/html/iso
 esxi_installiso: "{{ bastion_get_url }}/{{ cust_iso_file }}"
 
-# OneView Server profile Template creation
-server_profile_template_name: "{{ ov_template }}"
-server_hardware_type_name: "DL 380 Gen10 1"
-enclosure_group_name: "Demo1_Rack12_EG"
-## server_profile_name: "RHEl76"
-deployment_network_name: "Redhat_workload"
-## fc_network_1: "FC01"
-## fc_network_2: "FC02"
-## os_deployment_plan_name: "RHEL" 
-## storage_pool_name: "SSD_r5"
-## volume_template_name: "SVT-1"
-## firmware_baseline_name: "HPE Synergy Custom SPP 2018110 2019 02 15"
-
 # adjustable VMware installation related vars:
-org_iso:  "/tmp/VMware-ESXi-7.0.2.iso"
 cust_iso: "{{ bastion_iso_dir }}/{{ cust_iso_file }}"
-esxi_rootpw: "Pa$$w0rd"
-## Hint: put vault_ - variables into a seperate vault file named "vault"
-## encrpyt that file with:  ansible-vault encrypt group_vars/all/vault
-## assure the credential for file-encryption is put into tower as "vault"
-## and the credential is available to the playbooks
-
-
-# static or dhcp
-#### static will not realy work this way for more than one host to deploy ....
-#### but the esxi parameters must be tight to the specific host in the inventory
-#### we would also need different naming for the (different) iso-images
-#### second step approach
-esxi_bootproto: static
-# only if static:   # not finished yet
-esxi_ip: 172.16.15.215
-esxi_mask: 255.255.255.0
-esxi_gw: 172.16.15.250
-esxi_fqdn: "{{ inventory_hostname_short }}.deploy.local"
-esxi_nameserver: 172.16.15.1
-esxi_nameserver2: 172.16.15.80
-esxi_domain: deploy.local
 
 # fixed WMware installation related vars:
 ks_template: ks.cfg
