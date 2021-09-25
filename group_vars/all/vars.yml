@@ -13,7 +13,7 @@ ov_template: Workshop
 ov_profile: "{{kd_name}}_{{ inventory_hostname_short }}"
 
 # VMware Install related vars
-cust_iso_file: custom_esxi.iso
+cust_iso_file: "{{ ov_profile }}_esxi.iso"
 bastion_get_url: "http://{{ hostvars.bastion_host.ansible_host }}/iso"
 bastion_iso_dir: /var/www/html/iso
 esxi_installiso: "{{ bastion_get_url }}/{{ cust_iso_file }}"
