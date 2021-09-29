@@ -1,0 +1,91 @@
+---
+server_profile_data:
+  name: "{{ ov_profile }}"
+  serverHardwareName: "{{ ov_hardware }}"
+  bios:
+    manageBios: true
+    reapplyState: NotApplying
+    consistencyState: Consistent
+    overriddenSettings:
+      - id: WorkloadProfile
+        value: Virtualization-MaxPerformance
+      - id: PowerRegulator
+        value: StaticHighPerf
+      - id: MinProcIdlePower
+        value: NoCStates
+      - id: MinProcIdlePkgState
+        value: NoState
+      - id: EnergyPerfBias
+        value: MaxPerf
+      - id: CollabPowerControl
+        value: Disabled
+      - id: NumaGroupSizeOpt
+        value: Clustered
+      - id: UncoreFreqScaling
+        value: Maximum
+      - id: SubNumaClustering
+        value: Enabled
+      - id: EnergyEfficientTurbo
+        value: Disabled
+      - id: IntelUpiPowerManagement
+        value: Disabled
+  boot:
+    order:
+      - CD
+      - USB
+      - HardDisk
+      - PXE
+    manageBoot: false
+  bootMode:
+    mode: UEFIOptimized
+    manageMode: true
+    secureBoot: Disabled
+    pxeBootPolicy: Auto
+  localStorage:
+    controllers:
+      - mode: Mixed
+        deviceSlot: Embedded
+        initialize: true
+        logicalDrives:
+          - name: OsVol667
+            bootable: false
+            raidLevel: RAID1
+            accelerator: Unmanaged
+            driveNumber: 1
+            numSpareDrives: null
+            driveTechnology: SasHdd
+            sasLogicalJBODId: null
+            numPhysicalDrives: 2
+        driveWriteCache: Unmanaged
+        importConfiguration: false
+        predictiveSpareRebuild: Unmanaged
+    reapplyState: NotApplying
+    sasLogicalJBODs: []
+  firmware:
+    reapplyState: NotApplying
+    manageFirmware: true
+    consistencyState: Unknown
+    firmwareBaselineUri: "{{hp_spp}}"
+    firmwareInstallType: FirmwareAndOSDrivers
+    forceInstallFirmware: false
+    firmwareActivationType: Immediate
+    firmwareScheduleDateTime: ''
+  managementProcessor:
+    manageMp: true
+    mpSettings:
+      - args:
+          localAccounts:
+            - password: "{{new_ilo_pw}}"
+              userName: "{{new_ilo_user}}"
+              loginPriv: true
+              displayName: "{{new_ilo_user}}"
+              iLOConfigPriv: true
+              userConfigPriv: true
+              virtualMediaPriv: true
+              hostNICConfigPriv: true
+              remoteConsolePriv: true
+              hostBIOSConfigPriv: true
+              hostStorageConfigPriv: true
+              virtualPowerAndResetPriv: true
+        settingType: LocalAccounts
+    reapplyState: NotApplying

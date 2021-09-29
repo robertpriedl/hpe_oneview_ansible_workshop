@@ -5,15 +5,15 @@
   vars:
     # ov_hardwarename is ilo_dns name
     ov_hardware: "{{ilo_dns}}"
+  
+  # Import ServerProfile from KD-vars
+  vars_files:
+    - "/templates/{{kd_server_profile}}"
+
   tasks:
     - fail:
         msg: "You need to define ov_hardware for each host which should be deployed via this script"
       when: ov_hardware is undefined 
-
-    #- name: Set Oneview Server Profile Name for the host in question
-    #  set_fact:
-    #    ov_profile: "{{kd_name}}_{{ inventory_hostname_short }}"
-    #  when: ov_profile is undefined or ov_profile is not match ("^Workshop_.*")
 
     - name: Power Off compute in order to deploy the profile
       hpe.oneview.oneview_server_hardware:
@@ -38,95 +38,7 @@
         auth_login_domain: "{{ oneview_domain }}"
         api_version: "{{ oneview_apiversion }}"
         data:
-          name: "{{ ov_profile }}"
-          serverHardwareName: "{{ ov_hardware }}"
-          bios:
-            manageBios: true
-            reapplyState: NotApplying
-            consistencyState: Consistent
-            overriddenSettings:
-              - id: WorkloadProfile
-                value: Virtualization-MaxPerformance
-              - id: PowerRegulator
-                value: StaticHighPerf
-              - id: MinProcIdlePower
-                value: NoCStates
-              - id: MinProcIdlePkgState
-                value: NoState
-              - id: EnergyPerfBias
-                value: MaxPerf
-              - id: CollabPowerControl
-                value: Disabled
-              - id: NumaGroupSizeOpt
-                value: Clustered
-              - id: UncoreFreqScaling
-                value: Maximum
-              - id: SubNumaClustering
-                value: Enabled
-              - id: EnergyEfficientTurbo
-                value: Disabled
-              - id: IntelUpiPowerManagement
-                value: Disabled
-          boot:
-            order:
-              - CD
-              - USB
-              - HardDisk
-              - PXE
-            manageBoot: false
-          bootMode:
-            mode: UEFIOptimized
-            manageMode: true
-            secureBoot: Disabled
-            pxeBootPolicy: Auto
-          localStorage:
-            controllers:
-              - mode: Mixed
-                deviceSlot: Embedded
-                initialize: true
-                logicalDrives:
-                  - name: OsVol667
-                    bootable: false
-                    raidLevel: RAID1
-                    accelerator: Unmanaged
-                    driveNumber: 1
-                    numSpareDrives: null
-                    driveTechnology: SasHdd
-                    sasLogicalJBODId: null
-                    numPhysicalDrives: 2
-                driveWriteCache: Unmanaged
-                importConfiguration: false
-                predictiveSpareRebuild: Unmanaged
-            reapplyState: NotApplying
-            sasLogicalJBODs: []
-          firmware:
-            reapplyState: NotApplying
-            manageFirmware: true
-            consistencyState: Unknown
-            firmwareBaselineUri: "{{hp_spp}}"
-            firmwareInstallType: FirmwareAndOSDrivers
-            forceInstallFirmware: false
-            firmwareActivationType: Immediate
-            firmwareScheduleDateTime: ''
-          managementProcessor:
-            manageMp: true
-            mpSettings:
-              - args:
-                  localAccounts:
-                    - password: "{{new_ilo_pw}}"
-                      userName: "{{new_ilo_user}}"
-                      loginPriv: true
-                      displayName: "{{new_ilo_user}}"
-                      iLOConfigPriv: true
-                      userConfigPriv: true
-                      virtualMediaPriv: true
-                      hostNICConfigPriv: true
-                      remoteConsolePriv: true
-                      hostBIOSConfigPriv: true
-                      hostStorageConfigPriv: true
-                      virtualPowerAndResetPriv: true
-                settingType: LocalAccounts
-            reapplyState: NotApplying
+          "{{server_profile_data}}"
         params:
           force: True
       delegate_to: localhost
