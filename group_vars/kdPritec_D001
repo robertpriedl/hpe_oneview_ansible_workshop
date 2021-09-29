@@ -7,7 +7,7 @@ hp_spp: /rest/firmware-drivers/P35939_001_gen10spp-2021_04_0-SPP2021040_2021_040
 
 # Select the Serverprofile
 # Profile must be declared in the file profile_PROFILENAME.yml. eg: profile_standard.yml for standard profile
-kd_server_profile: standardRaid5
+kd_server_profile: standard
 
 # ILO settings
 # create new user for ILO with admin rights
