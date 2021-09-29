@@ -5,15 +5,6 @@
     - hpe.oneview
   
   tasks:
-    - name: Gather facts about all Server Hardwares
-      oneview_server_hardware_facts:
-        hostname: "{{ oneview_hostname }}"
-        username: "{{ oneview_username }}"
-        password: "{{ oneview_password }}"
-        auth_login_domain: "{{ oneview_domain }}"
-        api_version: "{{ oneview_apiversion }}"
-      delegate_to: localhost
-
     - name: Power of Server gentley
       hpe.oneview.oneview_server_hardware:
         hostname: "{{ oneview_hostname }}"
@@ -23,7 +14,7 @@
         api_version: "{{ oneview_apiversion }}"
         state: power_state_set
         data:
-          name : "{{ilo_dns.split('.')[0]}}"
+          name : "{{ilo_dns}}"
           powerStateData:
             powerState: "Off"
             powerControl: "MomentaryPress"
