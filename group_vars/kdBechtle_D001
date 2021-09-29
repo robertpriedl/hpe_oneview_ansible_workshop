@@ -11,7 +11,7 @@ new_ilo_user: admin2
 new_ilo_pw: Pa$$w0rd
 
 # ESXi NW Config for static
-esxi_fqdn: "{{ inventory_hostname_short }}.deploy.local"
 esxi_nameserver: 172.16.15.1
 esxi_nameserver2: 172.16.15.80
 esxi_domain: deploy.local
+esxi_fqdn: "{{ inventory_hostname_short }}.{{esxi_domain}}"

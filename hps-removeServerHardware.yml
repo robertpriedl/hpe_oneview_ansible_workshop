@@ -14,7 +14,7 @@
         api_version: "{{ oneview_apiversion }}"
         state: power_state_set
         data:
-          name : "172.18.6.15"
+          name : "{{ilo_dns.split('.')[0]}}"
           powerStateData:
             powerState: "Off"
             powerControl: "MomentaryPress"
