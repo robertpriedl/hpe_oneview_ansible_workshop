@@ -13,7 +13,7 @@ esxi_installiso: "{{ bastion_get_url }}/{{ cust_iso_file }}"
 # adjustable VMware installation related vars:
 cust_iso: "{{ bastion_iso_dir }}/{{ cust_iso_file }}"
 
-# fixed WMware installation related vars:
+# fixed WMware installation related vars: 
 ks_template: ks.cfg
 mnt_dir:  "/{{ ov_profile }}_esxi_cdrom_mount"
 wrk_dir:  "/{{ ov_profile }}_esxi_cdrom"
