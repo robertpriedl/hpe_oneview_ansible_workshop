@@ -8,7 +8,7 @@
   
   # Import ServerProfile from KD-vars
   vars_files:
-    - "/templates/profile_standard.yml"
+    - profile_standard.yml
 
   tasks:
     - fail:
