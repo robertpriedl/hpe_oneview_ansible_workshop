@@ -1,5 +1,5 @@
 ---
-server_profile_data:
+profile_data:
   name: "{{ ov_profile }}"
   serverHardwareName: "{{ ov_hardware }}"
   bios:

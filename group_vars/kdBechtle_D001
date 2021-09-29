@@ -5,6 +5,9 @@ org_iso:  "/tmp/VMware-ESXi-7.0.2.iso"
 # select hp support pack - Configure it under OneView. Get the path with the playbook "hps-getServerProfileFacts"
 hp_spp: /rest/firmware-drivers/P35939_001_gen10spp-2021_04_0-SPP2021040_2021_0409_17
 
+# Select the Serverprofile
+kd_server_profile: profile_standard
+
 # ILO settings
 # create new user for ILO with admin rights
 new_ilo_user: admin2

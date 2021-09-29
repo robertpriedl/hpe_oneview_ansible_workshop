@@ -8,7 +8,7 @@
   
   # Import ServerProfile from KD-vars
   vars_files:
-    - "{{kd_server_profile}}"
+    - "/templates/{{kd_server_profile}}.yml"
 
   tasks:
     - fail:
@@ -38,7 +38,7 @@
         auth_login_domain: "{{ oneview_domain }}"
         api_version: "{{ oneview_apiversion }}"
         data:
-          "{{server_profile_data}}"
+          "{{profile_data}}"
         params:
           force: True
       delegate_to: localhost
