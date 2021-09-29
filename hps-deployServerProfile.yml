@@ -8,7 +8,7 @@
   
   # Import ServerProfile from KD-vars
   vars_files:
-    - "vars/{{kd_server_profile}}.yml"
+    - "vars/profile_{{kd_server_profile}}.yml"
 
   tasks:
     - fail:
