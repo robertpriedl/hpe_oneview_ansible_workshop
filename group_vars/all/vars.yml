@@ -15,8 +15,8 @@ cust_iso: "{{ bastion_iso_dir }}/{{ cust_iso_file }}"
 
 # fixed WMware installation related vars:
 ks_template: ks.cfg
-mnt_dir:  /esxi_cdrom_mount
-wrk_dir:  /esxi_cdrom
+mnt_dir:  "/{{ ov_profile }}_esxi_cdrom_mount"
+wrk_dir:  "/{{ ov_profile }}_esxi_cdrom"
 ks_dest: "{{ wrk_dir }}/ks.cfg"
 bootoption: "runweasel ks=cdrom:/KS.CFG"
 bootcfg_dest: "{{ wrk_dir }}/efi/boot/boot.cfg"
