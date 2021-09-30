@@ -35,12 +35,13 @@
       ignore_errors: True
       register: display_facts
 
+    # when display facts faild (eg. unreachable hardware) set deploy_status for this hosts to failed
     - name: "set failed fact deploy_status"
       set_fact:
         deploy_status: failed
         cacheable: true
       ignore_unreachable: True
-      when: '"FAILED!" in display_facts'
+      when: '"FAILED!" in display_facts || "undefined variable" in display_facts'
  
    
 
