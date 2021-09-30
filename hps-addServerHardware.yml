@@ -32,6 +32,15 @@
     - name: display new server facts
       debug:
         msg: "{{ ansible_facts['server_hardware']['name'] }}"
+      ignore_errors: True
+      register: display_facts
+
+    - name: "set failed fact deploy_status"
+      set_fact:
+        deploy_status: failed
+        cacheable: true
+      ignore_unreachable: True
+      when: '"FAILED!" in display_facts'
  
    
 
