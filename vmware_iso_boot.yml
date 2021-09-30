@@ -15,6 +15,11 @@
     debug:
       var: ansible_default_ipv4.address
 
+  - name: "set begin install fact deploy_status"
+    set_fact:
+      deploy_status: install_os
+      cacheable: true
+
   - name: Task to boot a system using an ISO from an HP iLO interface to install esxi
     community.general.hpilo_boot:
       host: "{{ ilo_ip }}" 
