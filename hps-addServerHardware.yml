@@ -41,7 +41,7 @@
         deploy_status: failed
         cacheable: true
       ignore_unreachable: True
-      when: '"FAILED!" in display_facts || "undefined variable" in display_facts'
+      when: '"FAILED!" in display_facts or "undefined variable" in display_facts'
  
    
 
