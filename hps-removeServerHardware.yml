@@ -43,6 +43,11 @@
         data:
           name: "{{ilo_dns}}"
       delegate_to: localhost
+    
+    - name: "set completed fact deploy_status"
+      set_fact:
+        deploy_status: completed
+        cacheable: true
 
  
    
