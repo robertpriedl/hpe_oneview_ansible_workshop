@@ -8,7 +8,7 @@
     - name: "set started fact deploy_status"
       set_fact:
         deploy_status: started
-      cacheable: true
+        cacheable: true
       ignore_unreachable: True
 
     - name: Add a Server Hardware
