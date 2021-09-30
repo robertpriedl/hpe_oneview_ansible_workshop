@@ -31,7 +31,7 @@ all:
               esxi_ip: 172.16.15.215
               esxi_mask: 255.255.255.0 
               esxi_gw: 172.16.15.250
-        kdBechtle_D001
+        kdBechtle_D001:
           hosts:
             esx03:
               ansible_host: 172.16.15.233
