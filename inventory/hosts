@@ -16,7 +16,30 @@ all:
               esxi_ip: 172.16.15.215
               esxi_mask: 255.255.255.0 
               esxi_gw: 172.16.15.250
-        
+        kdBechtle_D001:
+          hosts:
+            esx03:
+              ansible_host: 172.16.15.233
+              ilo_dns: "ILOCZfsgdf13QWVK.network.local" 
+              ilo_ip: 172.16.15.222 
+              ilo_pw: "QGZ5CDQB" 
+              esxi_rootpw: "Pa$$w0rd" 
+              ilo_user: Administrator 
+              esxi_bootproto: static 
+              esxi_ip: 172.16.15.233
+              esxi_mask: 255.255.255.0 
+              esxi_gw: 172.16.15.250
+            esx04:
+              ansible_host: 172.16.15.234
+              ilo_dns: "ILOCZfsgdf13QWVK.network.local" 
+              ilo_ip: 172.16.15.225 
+              ilo_pw: "QGZ5CDQB" 
+              esxi_rootpw: "Pa$$w0rd" 
+              ilo_user: Administrator 
+              esxi_bootproto: static 
+              esxi_ip: 172.16.15.234 
+              esxi_mask: 255.255.255.0 
+              esxi_gw: 172.16.15.250
     infra:
       children:
         localhost:
