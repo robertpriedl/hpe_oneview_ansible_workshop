@@ -41,7 +41,7 @@ all:
               esxi_mask: 255.255.255.0 
               esxi_gw: 172.16.15.250
     
-    children:
+  children:
     localhost:
         ansible_connection: local
     bastion_host:
