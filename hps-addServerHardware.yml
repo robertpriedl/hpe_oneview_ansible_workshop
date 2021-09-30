@@ -5,6 +5,12 @@
     - hpe.oneview
   
   tasks:
+    - name: "set started fact deploy_status"
+      set_fact:
+        deploy_status: started
+        cacheable: true
+        ignore_unreachable: True
+
     - name: Add a Server Hardware
       hpe.oneview.oneview_server_hardware:
         hostname: "{{ oneview_hostname }}"
