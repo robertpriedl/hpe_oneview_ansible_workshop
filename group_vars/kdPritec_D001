@@ -11,11 +11,11 @@ kd_server_profile: standard
 
 # ILO settings
 # create new user for ILO with admin rights
-new_ilo_user: admin-pritec
+new_ilo_user: hero-pritec
 new_ilo_pw: Pa$$w0rd
 
 # ESXi NW Config for static
 esxi_nameserver: 172.16.15.1
 esxi_nameserver2: 172.16.15.80
-esxi_domain: pritec.local
+esxi_domain: pritecsupadupa.local
 esxi_fqdn: "{{ inventory_hostname_short }}.{{esxi_domain}}"

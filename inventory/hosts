@@ -5,14 +5,14 @@ all:
       children:
         kdPritec_D001:
           hosts: 
-            pri-esx01:
+            esx99:
               ansible_host: 172.16.15.215
               ilo_dns: "ILOCZ3913QWVK.network.local" 
               ilo_ip: 172.16.15.216 
               ilo_pw: "QGZ5CDQB" 
               esxi_rootpw: "Pa$$w0rd" 
               ilo_user: Administrator 
-              esxi_bootproto: static 
+              esxi_bootproto: static
               esxi_ip: 172.16.15.215
               esxi_mask: 255.255.255.0 
               esxi_gw: 172.16.15.250
