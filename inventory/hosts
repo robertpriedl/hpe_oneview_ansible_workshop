@@ -5,7 +5,7 @@ all:
       children:
         kdPritec_D001:
           hosts: 
-            esx99:
+            esx73:
               ansible_host: 172.16.15.215
               ilo_dns: "ILOCZ3913QWVK.network.local" 
               ilo_ip: 172.16.15.216 
