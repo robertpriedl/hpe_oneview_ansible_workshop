@@ -12,7 +12,7 @@ all:
               ilo_pw: "QGZ5CDQB" 
               esxi_rootpw: "Pa$$w0rd" 
               ilo_user: Administrator 
-              esxi_bootproto: dhcp
+              esxi_bootproto: static
               esxi_ip: 172.16.15.215
               esxi_mask: 255.255.255.0 
               esxi_gw: 172.16.15.250
