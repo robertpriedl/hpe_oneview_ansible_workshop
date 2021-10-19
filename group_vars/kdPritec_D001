@@ -11,7 +11,7 @@ kd_server_profile: standard
 
 # ILO settings
 # create new user for ILO with admin rights
-new_ilo_user: admin-pritec
+new_ilo_user: admin-super
 new_ilo_pw: Pa$$w0rd
 
 # ESXi NW Config for static
