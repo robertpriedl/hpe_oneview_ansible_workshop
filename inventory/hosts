@@ -3,7 +3,7 @@ all:
   children:
     esx_hosts:
       children:
-        kdPritec_D001:
+        kdBechtle_D001:
           hosts: 
             esx01:
               ansible_host: 10.200.201.100
@@ -16,7 +16,7 @@ all:
               esxi_ip: 10.200.201.100
               esxi_mask: 255.255.255.0 
               esxi_gw: 10.200.201.254
-        kdBechtle_D001:
+        kdPritec_D001:
           hosts:
             esx03:
               ansible_host: 172.16.15.233
