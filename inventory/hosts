@@ -7,7 +7,7 @@ all:
           hosts: 
             esx01:
               ansible_host: 10.200.201.100
-              ilo_dns: "ILOCZ3913QWVK.network.local" 
+              ilo_dns: "ILOCZ3913QWVK.deploy.local" 
               ilo_ip: 10.200.202.100
               ilo_pw: "QGZ5CDQB" 
               esxi_rootpw: "Pa$$w0rd" 
@@ -20,7 +20,7 @@ all:
           hosts:
             esx03:
               ansible_host: 172.16.15.233
-              ilo_dns: "ILOCZfsgdf13QWVK.network.local" 
+              ilo_dns: "ILOCZfsgdf13QWVK.deploy.local" 
               ilo_ip: 172.16.15.222 
               ilo_pw: "QGZ5CDQB" 
               esxi_rootpw: "Pa$$w0rd" 
@@ -31,7 +31,7 @@ all:
               esxi_gw: 172.16.15.250
             esx04:
               ansible_host: 172.16.15.234
-              ilo_dns: "ILOCZfsgdf13QWVK.network.local" 
+              ilo_dns: "ILOCZfsgdf13QWVK.deploy.local" 
               ilo_ip: 172.16.15.225 
               ilo_pw: "QGZ5CDQB" 
               esxi_rootpw: "Pa$$w0rd" 
