@@ -17,5 +17,5 @@ new_ilo_pw: Pa$$w0rd
 # ESXi NW Config for static
 esxi_nameserver: 10.200.100.1
 esxi_nameserver2: 8.8.8.8
-esxi_domain: deploy.local
+esxi_domain: "deploy.local"
 esxi_fqdn: "{{ inventory_hostname_short }}.{{esxi_domain}}"
