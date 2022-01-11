@@ -1,7 +1,7 @@
 ---
 kd_name: "BechtlePower"
 # select esxi iso. copy it to /tmp on the bastion host
-org_iso:  "/tmp/VMware-ESXi-7.0.2.iso"
+org_iso:  "/iso/VMware-ESXi-7.0.2.iso"
 # select hp support pack - Configure it under OneView. Get the path with the playbook "hps-getServerProfileFacts"
 hp_spp: /rest/firmware-drivers/P35939_001_gen10spp-2021_04_0-SPP2021040_2021_0409_17
 
